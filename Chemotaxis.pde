@@ -1,25 +1,42 @@
-Bacteria [] colony; //declare bacteria variables here   
+
+int startX = 200;
+int startY = 150;
+Bacteria [] colony;//declare bacteria variables here   
  void setup()   
- {     	//initialize bacteria variables here  
-  size(300,300);
-  	colony = new Bacteria[5]
- 	for(i=1; i<=colony.length; i++){
- 	colony[i] = new Bacteria();
-  //.colony.move();
- 	//.colony.show();
-  
+ {     
+ 	size(300, 400);
+ 	colony = new Bacteria[10];//initialize bacteria variables here
+ 	for(int i=0; i<colony.length; i++)
+ 	{
+ 		colony[i] = new Bacteria();
+ 	}
  }   
  void draw()   
  {    
-  background(0);
-  ellipse(x, y, 20, 20);
-  x = x + Math.random()*5+1;
-  y = y + Math. random()*5+1;
-  
- 	//move and show the bacteria   
+ 	//move and show the bacteria 
+ 	background(1);
+ 	for(int i=0; i<colony.length; i++)
+ 	{
+ 		colony[i].move();
+ 		colony[i].show();
+ 	}
  }  
  class Bacteria    
- {     
-  int myX, myY,
- 	//lots of java!   
+ {   
+ 	int myX, myY, myColor;   
+ 	Bacteria(){
+ 		myX = (int)(Math.random()*300);
+ 		myY = (int)(Math.random()*400);
+ 		myColor = color(
+ 			(int)(Math.random()*226), (int)(Math.random()*226), (int)(Math.random()*226));
+ 	}
+ 	void show()
+ 	{
+ 		ellipse(myX, myY, 10, 10);
+ 	}
+ 	void move()
+ 	{
+ 		myX = myX + (int)(Math.random()*5)-2;
+ 		myY = myY + (int)(Math.random()*5)-2;
+ 	}
  }    

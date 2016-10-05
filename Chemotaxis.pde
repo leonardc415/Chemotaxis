@@ -4,7 +4,7 @@ int startY = 150;
 Bacteria [] colony;//declare bacteria variables here   
  void setup()   
  {     
- 	size(300, 400);
+ 	size(600, 600);
  	colony = new Bacteria[100];//initialize bacteria variables here
  	for(int i=0; i<colony.length; i++)
  	{
@@ -25,8 +25,8 @@ Bacteria [] colony;//declare bacteria variables here
  {   
  	int myX, myY, myColor;   
  	Bacteria(){
- 		myX = (int)(Math.random()*300);
- 		myY = (int)(Math.random()*400);
+ 		myX = (int)(Math.random()*600);
+ 		myY = (int)(Math.random()*600);
  		myColor = color(
  			(int)(Math.random()*226), (int)(Math.random()*226), (int)(Math.random()*226));
  	}
